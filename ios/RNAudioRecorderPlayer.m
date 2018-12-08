@@ -114,14 +114,14 @@ RCT_EXPORT_METHOD(startRecorder:(NSString*)path
                   reject:(RCTPromiseRejectBlock)reject) {
   
   if ([path isEqualToString:@"DEFAULT"]) {
-    audioFileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:@"sound.m4a"]];
+    audioFileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:@"sound.mp4"]];
   } else {
     audioFileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:path]];
   }
 
   NSDictionary *audioSettings = [NSDictionary dictionaryWithObjectsAndKeys:
                                  [NSNumber numberWithFloat:44100],AVSampleRateKey,
-                                 [NSNumber numberWithInt: kAudioFormatAppleLossless],AVFormatIDKey,
+                                 [NSNumber numberWithInt: kAudioFormatMPEG4AAC],AVFormatIDKey,
                                  [NSNumber numberWithInt: 2],AVNumberOfChannelsKey,
                                  [NSNumber numberWithInt:AVAudioQualityMedium],AVEncoderAudioQualityKey,nil];
 
@@ -204,7 +204,7 @@ RCT_EXPORT_METHOD(startPlayer:(NSString*)path
         [downloadTask resume];
     } else {
         if ([path isEqualToString:@"DEFAULT"]) {
-            audioFileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:@"sound.m4a"]];
+            audioFileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:@"sound.mp4"]];
         } else {
             audioFileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:path]];
         }
