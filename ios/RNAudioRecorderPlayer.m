@@ -16,7 +16,7 @@
   NSTimer *recordTimer;
   NSTimer *playTimer;
 }
-double subscriptionDuration = 0.1;
+double subscriptionDuration = 0.3;
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
   NSLog(@"audioPlayerDidFinishPlaying");
@@ -38,10 +38,14 @@ double subscriptionDuration = 0.1;
 
 - (void)updateRecorderProgress:(NSTimer*) timer
 {
+  [audioRecorder updateMeters];
+  float currentLevel = [audioRecorder averagePowerForChannel: 0];
+    
   NSNumber *currentTime = [NSNumber numberWithDouble:audioRecorder.currentTime * 1000];
   // NSString* status = [NSString stringWithFormat:@"{\"current_position\": \"%@\"}", [currentTime stringValue]];
   NSDictionary *status = @{
                          @"current_position" : [currentTime stringValue],
+                         @"value" : [[NSNumber numberWithFloat:currentLevel] stringValue],
                          };
   [self sendEventWithName:@"rn-recordback" body:status];
 }
@@ -137,7 +141,7 @@ RCT_EXPORT_METHOD(startRecorder:(NSString*)path
                         initWithURL:audioFileURL
                         settings:audioSettings
                         error:nil];
-  
+  audioRecorder.meteringEnabled = YES;
   [audioRecorder setDelegate:self];
   [audioRecorder record];
   [self startRecorderTimer];
