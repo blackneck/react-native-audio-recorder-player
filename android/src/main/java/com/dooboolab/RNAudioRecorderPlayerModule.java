@@ -39,7 +39,7 @@ public class RNAudioRecorderPlayerModule extends ReactContextBaseJavaModule impl
   final private static String TAG = "RNAudioRecorderPlayer";
   final private static String FILE_LOCATION = "/sdcard/sound.mp4";
 
-  private int subsDurationMillis = 100;
+  private int subsDurationMillis = 1000;
 
   private final ReactApplicationContext reactContext;
   private MediaRecorder mediaRecorder;

@@ -16,7 +16,7 @@
   NSTimer *recordTimer;
   NSTimer *playTimer;
 }
-double subscriptionDuration = 0.3;
+double subscriptionDuration = 1;
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
   NSLog(@"audioPlayerDidFinishPlaying");
@@ -159,8 +159,9 @@ RCT_EXPORT_METHOD(stopRecorder:(RCTPromiseResolveBlock)resolve
             recordTimer = nil;
         }
 
-        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-        [audioSession setActive:NO error:nil];
+        // prevent disposing shared audiosession
+        // AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        // [audioSession setActive:NO error:nil];
 
         NSString *filePath = audioFileURL.absoluteString;
         resolve(filePath);
