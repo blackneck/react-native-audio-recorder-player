@@ -221,9 +221,10 @@ RCT_EXPORT_METHOD(startPlayer:(NSString*)path
         }
 
         // Able to play in silent mode
-        [[AVAudioSession sharedInstance]
-            setCategory: AVAudioSessionCategoryPlayback
-            error: nil];
+        // Able to listen and record simultaneously
+        // [[AVAudioSession sharedInstance]
+        //     setCategory: AVAudioSessionCategoryPlayback
+        //     error: nil];
 
         NSLog(@"Error %@",error);
         [audioPlayer play];
