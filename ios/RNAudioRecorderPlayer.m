@@ -120,7 +120,7 @@ RCT_EXPORT_METHOD(startRecorder:(NSString*)path
   if ([path isEqualToString:@"DEFAULT"]) {
     audioFileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:@"sound.mp4"]];
   } else {
-    audioFileURL = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingString:path]];
+    audioFileURL = [NSURL fileURLWithPath: path];
   }
 
   NSDictionary *audioSettings = [NSDictionary dictionaryWithObjectsAndKeys:

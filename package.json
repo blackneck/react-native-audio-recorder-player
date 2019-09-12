@@ -1,12 +1,14 @@
 {
   "name": "react-native-audio-recorder-player",
-  "version": "2.1.1",
+  "version": "2.2.4",
   "description": "React Native Audio Recorder and Player.",
+  "homepage": "https://github.com/dooboolab/react-native-audio-recorder-player",
   "main": "index.js",
   "types": "index.d.ts",
   "postinstall": "dooboolab-welcome postinstall",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint -c .eslintrc.js '.'"
   },
   "repository": {
     "type": "git",
@@ -24,9 +26,18 @@
   "license": "MIT",
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": ">=0.60.0"
   },
   "dependencies": {
-    "dooboolab-welcome": "^1.0.5"
+    "dooboolab-welcome": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.0.0",
+    "eslint-config-standard": "^14.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
   }
 }

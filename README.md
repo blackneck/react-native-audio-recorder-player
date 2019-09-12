@@ -2,15 +2,21 @@
 
 <img src="Logotype Primary.png" width="70%" height="70%" />
 
-<p align="left">
-  <a href="https://npmjs.org/package/react-native-audio-recorder-player"><img alt="npm version" src="http://img.shields.io/npm/v/react-native-audio-recorder-player.svg?style=flat-square"></a>
-  <a href="https://npmjs.org/package/react-native-audio-recorder-player"><img alt="npm version" src="http://img.shields.io/npm/dm/react-native-audio-recorder-player.svg?style=flat-square"></a>
-</p>
+[![Npm Version](http://img.shields.io/npm/v/react-native-audio-recorder-player.svg?style=flat-square)](https://npmjs.org/package/react-native-audio-recorder-player)
+[![Downloads](http://img.shields.io/npm/dm/react-native-audio-recorder-player.svg?style=flat-square)](https://npmjs.org/package/react-native-audio-recorder-player)
+[![Build Status](https://travis-ci.com/dooboolab/react-native-audio-recorder-player.svg?branch=master)](https://travis-ci.com/dooboolab/react-native-audio-recorder-player) [![Greenkeeper badge](https://badges.greenkeeper.io/dooboolab/react-native-audio-recorder-player.svg)](https://greenkeeper.io/)
+![License](http://img.shields.io/npm/l/react-native-audio-recorder-player.svg?style=flat-square)
 
 This is a react-native link module for audio recorder and player. This is not a playlist audio module and this library provides simple recorder and player functionalities for both `android` and `ios` platforms. This only supports default file extension for each platform. This module can also handle file from url.
 
 ## Free read
   - Happy [Blog](https://medium.com/@dooboolab/react-native-audio-recorder-and-player-4aa5f26a666).
+
+## Breaking Changes
+* Migrated to Android X in `2.2.0`. Please check the [Migration Guide](#migration-guide).
+
+ ## Migration Guide
+To migrate to `2.2.0` you must migrate your Android app to Android X by following the [Migrating to AndroidX Guide](https://developer.android.com/jetpack/androidx/migrate).
 
 ## Preview
 <img src="https://firebasestorage.googleapis.com/v0/b/flutterdart-5d354.appspot.com/o/react-native-audio-recorder-player.gif?alt=media&token=2bff9eeb-bab6-4265-918b-aa0c83ae0faf"/>
@@ -203,4 +209,6 @@ Also, above example helps you to setup manual path to record audio. Not giving p
 
 ## Help Maintenance
 I've been maintaining quite many repos these days and burning out slowly. If you could help me cheer up, buying me a cup of coffee will make my life really happy and get much energy out of it.
-<br/><a href="https://www.buymeacoffee.com/dooboolab" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+<br/>
+<a href="https://www.buymeacoffee.com/dooboolab" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/purple_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+[![Paypal](https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png)](https://paypal.me/dooboolab)
